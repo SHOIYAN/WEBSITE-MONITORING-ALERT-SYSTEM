@@ -1,5 +1,0 @@
-json 
-requests
-boto3
-os
-datetime
