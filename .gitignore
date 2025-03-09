@@ -4,6 +4,7 @@ infra/.terraform.lock.hcl
 infra/terraform.tfstate
 infra/terraform.tfstate.backup
 
+terraform.tfstate
 # Ignore Lambda ZIP files
 lambda/package.zip
 
@@ -12,4 +13,3 @@ __pycache__/
 lambda/__pycache__/
 
 
-.aws/
