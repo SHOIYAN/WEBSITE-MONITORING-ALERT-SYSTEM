@@ -41,3 +41,23 @@ resource "aws_iam_role_policy_attachment" "lambda_dynamodb_attach" {
   policy_arn = aws_iam_policy.lambda_dynamodb_policy.arn
 }
 
+resource "aws_iam_policy" "lambda_sns_policy" {
+  name        = "LambdaSNSPublishPolicy"
+  description = "Allow Lambda to publish messages to SNS"
+  
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = "sns:Publish"
+        Resource = "arn:aws:sns:us-east-1:888577021051:tana-monitoring-alerts"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "lambda_sns_attachment" {
+  policy_arn = aws_iam_policy.lambda_sns_policy.arn
+  role       = aws_iam_role.lambda_role.name
+}
