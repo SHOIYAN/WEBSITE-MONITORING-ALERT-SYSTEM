@@ -13,8 +13,17 @@ DYNAMODB_TABLE = os.getenv('DYNAMODB_TABLE','TanaMonitoring')
 SNS_TOPIC_ARN = os.getenv('SNS_TOPIC_ARN')
 
 def check_website():
-    return False  # Force website check to fail
+    """Checks website status returns True of False"""
+    url = 'https://www.tanatech.io/'
 
+    try:
+        response = requests.get(url, timeout=5)
+        if response.status_code == 200:
+            return True
+        else:
+            return False
+    except requests.RequestException:
+        return False
 
 def log_status(status):
     """Logs website status to Dynamodb with a timestamp"""
