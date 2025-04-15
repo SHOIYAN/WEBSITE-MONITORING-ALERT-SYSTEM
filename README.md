@@ -1,7 +1,7 @@
 # Tana Website Uptime Monitoring 🚀
 
 ## Overview
-This project is a **serverless monitoring solution** that checks the uptime of [Tana's website](https://tana.inc) every **5 minutes**. If the website is **down**, an **SNS notification** is triggered, and the status is logged in **DynamoDB** for further analysis. This was built as part of a **DevOps learning project** to demonstrate AWS automation and observability.
+This project is a **serverless monitoring solution** that checks the uptime of a website in this example [Tana's website](https://tana.inc) every **5 minutes**. If the website is **down**, an **SNS notification** is triggered, and the status is logged in **DynamoDB** for further analysis. This was built as part of a **DevOps learning project** to demonstrate AWS automation and observability.
 
 ## Tech Stack 🛠️
 - **AWS Lambda** – Runs the uptime check every 5 minutes
